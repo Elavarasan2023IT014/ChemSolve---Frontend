@@ -1,0 +1,166 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .formGroup label {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) * 2 + 1rem);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+  }
+  
+  .form input::placeholder {
+    color: rgba(176, 176, 176, 0.6);
+  }
+  
+  .form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+  }
+  
+  .forgotPassword {
+    text-align: right;
+    margin-top: -var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .forgotPassword a {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+  
+  .forgotPassword a:hover {
+    color: var(--secondary-light);
+    text-decoration: underline;
+  }
+  
+  .submitButton {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .divider {
+    position: relative;
+    text-align: center;
+    margin: var(--spacing-md) 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 70px);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .divider::before {
+    left: 0;
+  }
+  
+  .divider::after {
+    right: 0;
+  }
+  
+  .divider span {
+    display: inline-block;
+    padding: 0 var(--spacing-sm);
+    background-color: transparent;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+  
+  .socialButtons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+  
+  .socialButton {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-normal);
+  }
+  
+  .socialButton span {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .google {
+    color: #ea4335;
+  }
+  
+  .github {
+    color: #fff;
+  }
+  
+  .socialButton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .loadingSpinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

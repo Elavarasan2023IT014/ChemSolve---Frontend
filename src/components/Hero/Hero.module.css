@@ -1,0 +1,194 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 900px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .particle {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0.3;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-100px) rotate(180deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .heroTitle {
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.1;
+  }
+  
+  .heroTitleMain {
+    display: block;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, var(--text-primary), var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .heroTitleSub {
+    display: block;
+    font-size: 3.5rem;
+    color: var(--accent);
+    position: relative;
+  }
+  
+  .heroDescription {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-secondary);
+  }
+  
+  .heroButtons {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .heroImageContainer {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  
+  .heroImage {
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+  
+  .molecule {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  .atom {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    animation: pulse 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+    to { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px rgba(255, 255, 255, 0.5); }
+  }
+  
+  .bond {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+    transform-origin: left center;
+  }
+  
+  .heroShape {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, var(--dark-bg) 30%, transparent);
+    transform: skewY(-3deg);
+  }
+  
+  @media (max-width: 992px) {
+    .heroImageContainer {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin-top: var(--spacing-xl);
+      transform: none;
+      top: auto;
+    }
+    
+    .heroImage {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .hero {
+      height: auto;
+      max-height: none;
+      padding: var(--spacing-xxl) 0;
+    }
+    
+    .heroContent {
+      max-width: 100%;
+      text-align: center;
+    }
+    
+    .heroButtons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroTitleMain, .heroTitleSub {
+      font-size: 2.5rem;
+    }
+    
+    .heroButtons {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+  }

@@ -1,0 +1,116 @@
+.footer {
+    background: var(--dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    position: relative;
+    margin-top: var(--spacing-xxl);
+  }
+  
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+  
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+  }
+  
+  .footerBrand {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+  }
+  
+  .footerLogo {
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .logoText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+  }
+  
+  .highlight {
+    color: var(--primary);
+    position: relative;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 0;
+    right: -8px;
+  }
+  
+  .footerDescription {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+  }
+  
+  .footerLinkGroup {
+    min-width: 150px;
+  }
+  
+  .footerLinkGroup h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    position: relative;
+    padding-bottom: var(--spacing-xs);
+  }
+  
+  .footerLinkGroup h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--primary);
+  }
+  
+  .footerLinkGroup ul {
+    list-style: none;
+  }
+  
+  .footerLinkGroup li {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .footerLinkGroup a {
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+    font-size: 0.95rem;
+  }
+  
+  .footerLinkGroup a:hover {
+    color: var(--primary);
+    padding-left: var(--spacing-xs);
+  }
+  
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    }

@@ -1,0 +1,255 @@
+.previousEquationsContainer {
+  padding: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease forwards;
+  margin-top: 50px; /* Added to push content below the fixed header */
+}
+
+.previousEquationsContainer h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--primary-light);
+  position: relative;
+}
+
+.previousEquationsContainer h1:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: var(--spacing-sm) auto 0;
+  border-radius: var(--radius-full);
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.equationsList {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.equationItem {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: rgba(31, 41, 55, 0.7);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border-left: 3px solid transparent;
+}
+
+.equationItem:hover {
+  background: rgba(50, 63, 82, 0.7);
+  transform: translateX(4px);
+}
+
+.equationItem.selected {
+  background: rgba(50, 63, 82, 0.9);
+  border-left: 3px solid var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.equationPreview {
+  overflow: hidden;
+}
+
+.equationText {
+  font-family: var(--font-code);
+  word-break: break-word;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.equationDate {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.equationDetails {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.detailsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(176, 176, 176, 0.2);
+}
+
+.detailsHeader h2 {
+  margin-bottom: 0;
+  color: var(--primary-light);
+}
+
+.actionButtons {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.deleteButton {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.deleteButton:hover {
+  background-color: rgba(255, 71, 87, 0.1);
+}
+
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.detailsSection {
+  margin-bottom: var(--spacing-md);
+}
+
+.detailsSection h3 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.stepsList {
+  list-style-position: inside;
+  padding-left: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.stepsList li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.moleculesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.moleculeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: var(--radius-md);
+}
+
+.moleculeItem span {
+  font-family: var(--font-code);
+  color: var(--text-primary);
+}
+
+.noEquationsMessage {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.noEquationsMessage p {
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.2rem;
+}
+
+.returnButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.errorMessage {
+  text-align: center;
+  color: var(--danger);
+  background: rgba(255, 71, 87, 0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(138, 43, 226, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .contentContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .equationsList {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .previousEquationsContainer {
+    padding: var(--spacing-md);
+  }
+
+  .moleculeItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .previousEquationsContainer h1 {
+    font-size: 1.8rem;
+  }
+
+  .equationDetails {
+    padding: var(--spacing-md);
+  }
+
+  .detailsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .actionButtons {
+    width: 100%;
+  }
+}

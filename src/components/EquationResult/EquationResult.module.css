@@ -1,0 +1,229 @@
+.resultContainer {
+  margin-top: var(--spacing-xl);
+  animation: slideUp 0.6s ease forwards;
+}
+
+.resultTitle {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.8rem;
+}
+
+.resultCard {
+  background: var(--card-gradient);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.equationSummary {
+  border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+
+  h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+}
+
+.equalityStatus {
+  margin-bottom: var(--spacing-md);
+}
+
+.balancedTag, .unbalancedTag {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.balancedTag {
+  background-color: rgba(46, 213, 115, 0.15);
+  color: var(--success);
+}
+
+.unbalancedTag {
+  background-color: rgba(255, 71, 87, 0.15);
+  color: var(--danger);
+}
+
+.equationDisplay {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.originalEquation, .balancedEquation {
+  margin-bottom: var(--spacing-md);
+
+  h4 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  p {
+    font-family: var(--font-code);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+  }
+}
+
+.balancedEquation {
+  p {
+    color: var(--accent);
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.detailsCard {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+
+  h3 {
+    color: var(--primary-light);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) 0;
+    font-family: var(--font-code);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.viewButton {
+  background-color: rgba(0, 183, 255, 0.2);
+  color: var(--accent, #00b7ff);
+  border: 1px solid rgba(0, 183, 255, 0.3);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 183, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.elementAnalysis {
+  margin-bottom: var(--spacing-lg);
+
+  h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+.elementTable {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.elementHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(138, 43, 226, 0.2);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.elementRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.elementSymbol {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.checkIcon {
+  color: var(--success);
+}
+
+.timesIcon {
+  color: var(--danger);
+}
+
+.explanationSection {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+
+  h3 {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .elementHeader, .elementRow {
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    font-size: 0.9rem;
+  }
+  
+  .resultTitle {
+    font-size: 1.5rem;
+  }
+}

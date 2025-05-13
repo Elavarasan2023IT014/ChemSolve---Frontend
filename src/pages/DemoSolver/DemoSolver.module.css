@@ -1,0 +1,247 @@
+.demoSolverContainer {
+  padding: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in-out;
+  padding-top: 90px; /* Added to push content below the fixed header */
+}
+
+/* Header & Info Section */
+.infoSection {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.infoSection h1 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: var(--spacing-md);
+  font-size: 2.5rem;
+}
+
+.infoSection p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* Example Equations Section */
+.examplesSection {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.examplesSection h3 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.examplesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.exampleButton {
+  background: rgba(138, 43, 226, 0.15);
+  border: 1px solid var(--primary-light);
+  color: var(--text-primary);
+  transition: var(--transition-normal);
+}
+
+.exampleButton:hover {
+  background: rgba(138, 43, 226, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* Equation Form */
+.equationForm {
+  background: var(--card-gradient);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inputGroup {
+  margin-bottom: var(--spacing-lg);
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+.equationInput {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--primary-dark);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: var(--transition-normal);
+}
+
+.equationInput:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: var(--glow);
+}
+
+.equationInput::placeholder {
+  color: rgba(176, 176, 176, 0.7);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.solveButton {
+  min-width: 200px;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border: none;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.solveButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--glow);
+}
+
+.solveButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: var(--danger);
+  margin: var(--spacing-md) 0;
+  font-weight: 500;
+}
+
+/* Result Section */
+.resultSection {
+  background: var(--card-gradient);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.resultSection h3 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.balancedEquation {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-align: center;
+  border-left: 4px solid var(--primary);
+}
+
+.stepsList {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  list-style-position: inside;
+}
+
+.stepsList li {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.stepsList li:last-child {
+  margin-bottom: 0;
+}
+
+/* Sign-up Prompt */
+.signupPrompt {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, rgba(0, 191, 255, 0.15) 100%);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.signupPrompt p {
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.signupButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .demoSolverContainer {
+    padding: var(--spacing-lg);
+  }
+  
+  .examplesList {
+    flex-direction: column;
+  }
+  
+  .exampleButton {
+    width: 100%;
+  }
+  
+  .balancedEquation {
+    font-size: 1rem;
+    padding: var(--spacing-md);
+  }
+  
+  .signupButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .signupButtons a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .equationForm,
+  .resultSection {
+    padding: var(--spacing-lg);
+  }
+  
+  .infoSection h1 {
+    font-size: 2rem;
+  }
+}

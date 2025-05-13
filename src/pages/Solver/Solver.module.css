@@ -1,0 +1,329 @@
+.solverPage {
+  min-height: calc(100vh - 140px); /* Adjust based on your header/footer height */
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xxl);
+  background: var(--dark-gradient);
+  margin-top: 90px; /* Added to push content below the fixed header */
+}
+
+.solverContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.solverHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.solverHeader h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.solverDescription {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-xl) 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(138, 43, 226, 0.1);
+  border-radius: 50%;
+  border-left-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+.loadingContainer p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.errorMessage {
+  background-color: rgba(255, 71, 87, 0.1);
+  color: var(--danger);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin: var(--spacing-lg) auto;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .solverPage {
+    padding-top: var(--spacing-lg);
+  }
+  
+  .solverHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .solverDescription {
+    font-size: 1rem;
+  }
+  .moleculeSelectors {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.moleculeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.reactantsGroup,
+.productsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.reactantsGroup h4,
+.productsGroup h4 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.moleculeButton {
+  background: rgba(138, 43, 226, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moleculeButton:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.activeMolecule {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3);
+}
+
+.moleculeViewerSection {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.sectionTitle {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.sectionDescription {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.selectMoleculePrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.promptIcon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .moleculeSelectors {
+    padding: var(--spacing-sm);
+  }
+
+  .moleculeButton {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+
+  .moleculeViewerSection {
+    padding: var(--spacing-md);
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.9rem;
+  }
+}
+}
+.moleculeSelectors {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .moleculeButtons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .reactantsGroup,
+  .productsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .reactantsGroup h4,
+  .productsGroup h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+  
+  .moleculeButton {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .moleculeButton:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  .activeMolecule {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3);
+  }
+  
+  .moleculeViewerSection {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .sectionTitle {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .sectionDescription {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .selectMoleculePrompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .promptIcon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary);
+  }
+  
+  @media (max-width: 768px) {
+    .moleculeSelectors {
+      padding: var(--spacing-sm);
+    }
+  
+    .moleculeButton {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      font-size: 0.9rem;
+    }
+  
+    .moleculeViewerSection {
+      padding: var(--spacing-md);
+    }
+  
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+  
+    .sectionDescription {
+      font-size: 0.9rem;
+    }
+  }

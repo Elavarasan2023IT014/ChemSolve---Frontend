@@ -1,0 +1,234 @@
+.equationFormContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+  }
+  
+  .formCard {
+    padding: var(--spacing-lg);
+    background: var(--card-gradient);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-xl);
+    height: 450px;
+  }
+  
+  .formTitle {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .formDescription {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .form {
+    width: 100%;
+  }
+  
+  .inputGroup {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+  }
+  
+  .label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: var(--transition-normal);
+  }
+  
+  .input:focus {
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+  }
+  
+  .input::placeholder {
+    color: rgba(176, 176, 176, 0.5);
+  }
+  
+  .exampleButton {
+    position: absolute;
+    right: var(--spacing-sm);
+    background: transparent;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+  }
+  
+  .exampleButton:hover {
+    color: var(--secondary-light);
+  }
+  
+  .exampleButton i {
+    font-size: 1rem;
+  }
+  
+  .examplesDropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-md);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  .examplesDropdown h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+  }
+  
+  .examplesList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .examplesList li {
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .examplesList li:hover {
+    background: rgba(138, 43, 226, 0.2);
+  }
+  
+  .exampleName {
+    font-weight: 500;
+    color: var(--primary-light);
+    margin-right: var(--spacing-xs);
+  }
+  
+  .exampleEquation {
+    color: var(--text-secondary);
+    font-family: var(--font-code);
+  }
+  
+  .errorMessage {
+    color: var(--danger);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .solveButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: var(--transition-normal);
+    border: none;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .solveButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .solveButton:active {
+    transform: translateY(0);
+  }
+  
+  .formTips {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+  }
+  
+  .formTips h3 {
+    color: var(--secondary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .formTips ul {
+    list-style-type: disc;
+    padding-left: var(--spacing-lg);
+  }
+  
+  .formTips li {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .equationFormContainer {
+      padding: var(--spacing-md);
+    }
+    
+    .formTitle {
+      font-size: 1.5rem;
+    }
+    
+    .inputWrapper {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .exampleButton {
+      position: relative;
+      right: auto;
+      justify-content: center;
+      margin-top: var(--spacing-sm);
+    }
+  }

@@ -1,0 +1,355 @@
+.viewerCard {
+    background: var(--card-gradient);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: fadeIn 0.6s ease forwards;
+  }
+  
+  .viewerCard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl), 0 10px 20px rgba(138, 43, 226, 0.2);
+  }
+  
+  .viewerHeader {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .reactantTitle, .productTitle {
+    font-size: 1.2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .reactantTitle {
+    color: var(--primary-light);
+  }
+  
+  .productTitle {
+    color: var(--secondary);
+  }
+  
+  .typeLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  
+  .viewControls {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+  
+  .viewControlButton {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+  }
+  
+  .viewControlButton:hover {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+  }
+  
+  .activeControl {
+    background: rgba(138, 43, 226, 0.2);
+    color: var(--primary-light);
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+  }
+  
+  .viewerContainer {
+    height: 300px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    height: 100%;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(138, 43, 226, 0.3);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .errorState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--danger);
+    height: 100%;
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .errorState i {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .moleculeView {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .moleculePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+  }
+  
+  .moleculeSymbol {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-code);
+    color: var(--text-primary);
+  }
+  
+  .element {
+    color: var(--secondary);
+  }
+  
+  .subscript {
+    color: var(--accent);
+    font-size: 0.7em;
+  }
+  
+  .viewModeLabel {
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .placeholderMolecule {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 15s linear infinite;
+  }
+  
+  @keyframes rotate {
+    to { transform: rotateY(360deg); }
+  }
+  
+  /* Stick Model */
+  .stickModel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stick1, .stick2, .stick3 {
+    position: absolute;
+    background: var(--secondary);
+    border-radius: var(--radius-sm);
+    transform-origin: center;
+  }
+  
+  .stick1 {
+    width: 80px;
+    height: 4px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+  
+  .stick2 {
+    width: 4px;
+    height: 80px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .stick3 {
+    width: 60px;
+    height: 4px;
+    bottom: 30%;
+    right: 10%;
+    transform: rotate(45deg);
+  }
+  
+  /* Ball and Stick Model */
+  .ballAndStickModel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ball1, .ball2, .ball3 {
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .ball1 {
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    top: 20%;
+    left: 20%;
+  }
+  
+  .ball2 {
+    width: 24px;
+    height: 24px;
+    background: var(--secondary);
+    top: 30%;
+    left: 60%;
+  }
+  
+  .ball3 {
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    bottom: 20%;
+    left: 40%;
+  }
+  
+  /* Sphere Model */
+  .sphereModel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sphere1, .sphere2, .sphere3 {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sphere1 {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    top: 15%;
+    left: 25%;
+    opacity: 0.8;
+  }
+  
+  .sphere2 {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-light);
+    bottom: 20%;
+    left: 15%;
+    opacity: 0.8;
+  }
+  
+  .sphere3 {
+    width: 55px;
+    height: 55px;
+    background: var(--accent);
+    top: 40%;
+    right: 15%;
+    opacity: 0.8;
+  }
+  
+  .viewerInfo {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .infoLabel {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+  
+  .infoValue {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-code);
+  }
+  
+  .viewerFooter {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .viewerTip {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .viewerTip:before {
+    content: "💡";
+  }
+  
+  @media (max-width: 768px) {
+    .viewerHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+    }
+    
+    .viewControls {
+      width: 100%;
+      justify-content: flex-end;
+    }
+    
+    .viewerInfo {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }
+  
