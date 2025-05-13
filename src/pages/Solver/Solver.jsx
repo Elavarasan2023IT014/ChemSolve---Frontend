@@ -62,7 +62,7 @@ const Solver = () => {
       }
 
       const response = await axios.post(
-        'http://localhost:5000/api/equations/solve',
+        'https://chemsolve-backend.onrender.com/api/equations/solve',
         { equation },
         {
           headers: {

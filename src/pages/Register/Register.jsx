@@ -42,7 +42,7 @@ const Register = () => {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post('https://chemsolve-backend.onrender.com/api/auth/register', {
         username: formData.username,
         email: formData.email,
         password: formData.password,

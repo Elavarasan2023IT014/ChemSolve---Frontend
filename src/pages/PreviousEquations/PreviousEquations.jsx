@@ -29,7 +29,7 @@ const PreviousEquations = () => {
         throw new Error('Authentication token not found');
       }
 
-      const response = await fetch('http://localhost:5000/api/equations/history', {
+      const response = await fetch('https://chemsolve-backend.onrender.com/api/equations/history', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -121,7 +121,7 @@ const PreviousEquations = () => {
         throw new Error('Authentication token not found');
       }
 
-      const response = await fetch(`http://localhost:5000/api/equations/${id}`, {
+      const response = await fetch(`https://chemsolve-backend.onrender.com/api/equations/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

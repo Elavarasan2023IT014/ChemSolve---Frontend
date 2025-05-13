@@ -49,7 +49,7 @@ function App() {
     
     try {
       // Configure axios with the token
-      const response = await axios.get('http://localhost:5000/api/auth/me', {
+      const response = await axios.get('https://chemsolve-backend.onrender.com/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
