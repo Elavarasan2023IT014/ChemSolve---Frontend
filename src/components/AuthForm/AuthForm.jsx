@@ -93,23 +93,6 @@ const AuthForm = ({ formData, onChange, onSubmit, isLogin, loading }) => {
           'Create Account'
         )}
       </Button>
-      
-      {isLogin && (
-        <div className={styles.divider}>
-          <span>Or continue with</span>
-        </div>
-      )}
-      
-      {isLogin && (
-        <div className={styles.socialButtons}>
-          <button type="button" className={`${styles.socialButton} ${styles.google}`}>
-            <span>G</span>
-          </button>
-          <button type="button" className={`${styles.socialButton} ${styles.github}`}>
-            <span>GH</span>
-          </button>
-        </div>
-      )}
     </form>
   );
 };
