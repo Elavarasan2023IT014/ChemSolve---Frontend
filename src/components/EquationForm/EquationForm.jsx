@@ -43,8 +43,7 @@ const EquationForm = ({ onSolveEquation = () => {} }) => {
       <Card className={styles.formCard}>
         <h2 className={styles.formTitle}>Chemical Equation Solver</h2>
         <p className={styles.formDescription}>
-          Enter a chemical equation to balance and solve. Use the arrow symbol (-) to separate reactants and products.
-        </p>
+Enter a chemical equation to balance and solve. Use the arrow symbol -&#62; to separate reactants and products.        </p>
         
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
@@ -101,7 +100,7 @@ const EquationForm = ({ onSolveEquation = () => {} }) => {
         <ul>
           <li>Use correct chemical formulas (H2O, not H20)</li>
           <li>Separate compounds with + signs</li>
-          <li>Use - to separate reactants and products</li>
+          <li>Use -&#62; to separate reactants and products</li>
           <li>For complex molecules, use correct notation (e.g., CH3COOH for acetic acid)</li>
           <li>States can be indicated as (g), (l), (s), or (aq) if needed</li>
         </ul>
